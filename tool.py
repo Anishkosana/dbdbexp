@@ -1,5 +1,6 @@
 
 import sys
+import dbdbexp 
 
 def main(argv):
     if not (4<= len(argv) <=5):
@@ -9,7 +10,7 @@ def main(argv):
     if verb not in {'get', 'set', 'delete'}:
         usage()
         return BAD_VERB
-    db = dbdb.connect(dbname)
+    db = dbdbexp.connect(dbname)
     try:
        if verb == 'get':
            sys.stdout.write(db[key])
